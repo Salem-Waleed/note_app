@@ -11,12 +11,23 @@ class CustomHomeView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: const[
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           CustomAppBar(),
-          CustomNoteItem(),
+          Expanded(child: CustomListViewNoteItem()),
         ],
       ),
     );
+  }
+}
+
+class CustomListViewNoteItem extends StatelessWidget {
+  const CustomListViewNoteItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  ListView.builder(itemBuilder: (context,index){
+      return const CustomNoteItem();
+    });
   }
 }
 
