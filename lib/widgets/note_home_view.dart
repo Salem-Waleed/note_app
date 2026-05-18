@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_app_bar.dart';
-import 'package:note_app/widgets/custom_note_item.dart';
+import 'package:note_app/widgets/list_view_builder_note_item.dart';
 
 class CustomHomeView extends StatelessWidget {
   const CustomHomeView({super.key});
@@ -20,15 +20,5 @@ class CustomHomeView extends StatelessWidget {
   }
 }
 
-class CustomListViewNoteItem extends StatelessWidget {
-  const CustomListViewNoteItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  ListView.builder(itemBuilder: (context,index){
-      return const CustomNoteItem();
-    });
-  }
-}
 
 
