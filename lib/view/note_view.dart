@@ -8,12 +8,21 @@ class NoteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+             builder: (context){
+              return Container(
+                
+              );
+             },
+             );
+        },
         backgroundColor: Color(0xff00f1d7),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         child: Icon(Icons.add,color: Colors.black,),
       ),
-      body: const CustomHomeView(),
+      body: const CustomNoteHomeView(),
     );
   }
 }

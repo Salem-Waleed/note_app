@@ -7,8 +7,13 @@ class CustomListViewNoteItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView.builder(itemBuilder: (context,index){
-      return const CustomNoteItem();
-    });
+    return  Padding(
+      padding: EdgeInsets.symmetric(vertical: 16),
+      child: ListView.builder(
+        padding:EdgeInsets.zero,
+        itemBuilder: (context,index){
+        return const CustomNoteItem();
+      }),
+    );
   }
 }
