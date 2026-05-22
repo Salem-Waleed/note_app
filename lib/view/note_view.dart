@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/note_home_view.dart';
+import 'package:note_app/widgets/show_modal_bottom_sheet.dart';
 
 class NoteView extends StatelessWidget {
   const NoteView({super.key});
@@ -12,8 +13,8 @@ class NoteView extends StatelessWidget {
           showModalBottomSheet(
             context: context,
              builder: (context){
-              return Container(
-                
+              return const ShowBottomSheet(
+
               );
              },
              );
@@ -26,3 +27,4 @@ class NoteView extends StatelessWidget {
     );
   }
 }
+
