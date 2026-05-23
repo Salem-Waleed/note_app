@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:note_app/view/edit_notes_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key});
@@ -8,52 +9,60 @@ class CustomNoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color(0xffffcb70),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              ListTile(
-                title: const Text(
-                  'Flutter tips',
-                  style: TextStyle(color: Colors.black, fontSize: 24),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => EditNotesView()),
+          );
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xffffcb70),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                ListTile(
+                  title: const Text(
+                    'Flutter tips',
+                    style: TextStyle(color: Colors.black, fontSize: 24),
+                  ),
+
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 18, bottom: 18),
+                    child: Text(
+                      'Build your career with salem waleed ,welcom ',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black.withValues(alpha: .4),
+                      ),
+                    ),
+                  ),
+                  trailing: IconButton(
+                    icon: const FaIcon(
+                      FontAwesomeIcons.trash,
+                      size: 28,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
-      
-                subtitle: Padding(
-                  padding: const EdgeInsets.only(top: 18, bottom: 18),
+                Padding(
+                  padding: const EdgeInsets.only(right: 28),
                   child: Text(
-                    'Build your career with salem waleed ,welcom ',
+                    'may 12,2026',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 12,
                       color: Colors.black.withValues(alpha: .4),
                     ),
                   ),
                 ),
-                trailing: IconButton(
-                  icon: const FaIcon(
-                    FontAwesomeIcons.trash,
-                    size: 28,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 28),
-                child: Text(
-                  'may 12,2026',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black.withValues(alpha: .4),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
