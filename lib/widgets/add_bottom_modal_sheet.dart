@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_bottom.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
+
 class AddBottomModalSheet extends StatelessWidget {
   const AddBottomModalSheet({super.key});
 
@@ -28,6 +29,7 @@ class AddNoteBotton extends StatefulWidget {
 class _AddNoteBottonState extends State<AddNoteBotton> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  String? title,subTitle;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -40,6 +42,9 @@ class _AddNoteBottonState extends State<AddNoteBotton> {
         ),
         CustomTextField(
           hint: 'Title',
+          onSaved: (value){
+            title = value;
+          },
         ),
         const SizedBox(
           height: 16,
@@ -48,6 +53,9 @@ class _AddNoteBottonState extends State<AddNoteBotton> {
         CustomTextField(
           hint: 'content',
           maxLine: 5,
+          onSaved: (value){
+            subTitle = value;
+          },
           ),
           SizedBox(
           height: 30,
